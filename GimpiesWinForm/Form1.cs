@@ -12,9 +12,10 @@ namespace GimpiesWinForm
 {
     public partial class Form1 : Form
     {
-        private static string LOGINNAME = "Verkoop";
-        private static string LOGINPASSWORD = "Gimpies_Verkoop";
         
+        // This is the global login name and password.
+        private static string VERKOOPNAME = "Verkoop";
+        private static string VERKOOPPASSWORD = "Gimpies_Verkoop";
         
         public Form1()
         {
@@ -23,9 +24,23 @@ namespace GimpiesWinForm
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (username.Text == LOGINNAME && password.Text == LOGINPASSWORD)
+            if (username.Text == VERKOOPNAME && password.Text == VERKOOPPASSWORD)
             {
-                
+                // var verkoopform = VerkoopForm.ActiveForm;
+                var f = new VerkoopForm();
+                f.
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                password.UseSystemPasswordChar = true;
             }
         }
     }
